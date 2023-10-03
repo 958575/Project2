@@ -1,0 +1,33 @@
+class InstagramPost:
+
+    // Private properties
+    private String username
+    private String caption
+    private Image image
+    private int likes
+    private List<Comment> comments
+
+    // Public constructor
+    public InstagramPost(username, caption, image):
+        this.username = username
+        this.caption = caption
+        this.image = image
+        this.likes = 0
+        this.comments = []
+
+    // Public method to add a like
+    public function addLike():
+        this.likes = this.likes + 1
+
+    // Public method to add a comment
+    public function addComment(comment):
+        this.comments.append(comment)
+
+    // Public method to display post details
+    public function displayPost():
+        print("Username:", this.username)
+        print("Caption:", this.caption)
+        print("Likes:", this.likes)
+        print("Comments:")
+        for comment in this.comments:
+            print(comment)
