@@ -1,0 +1,38 @@
+import string
+
+# Function to clean and tokenize a text
+def clean_and_tokenize(text):
+    # Remove punctuation and convert to lowercase
+    text = text.translate(str.maketrans('', '', string.punctuation)).lower()
+    # Tokenize the text by whitespace
+    words = text.split()
+    return words
+
+# Function to count word frequencies
+def count_word_frequencies(words):
+    word_count = {}
+    for word in words:
+        if word in word_count:
+            word_count[word] += 1
+        else:
+            word_count[word] = 1
+    return word_count
+
+# Function to print word frequencies
+def print_word_frequencies(word_count):
+    for word, count in word_count.items():
+        print(f"{word}: {count}")
+
+# Read the essay from a file
+file_path = "your_essay.txt"
+with open(file_path, 'r') as file:
+    essay_text = file.read()
+
+# Clean and tokenize the essay
+essay_words = clean_and_tokenize(essay_text)
+
+# Count word frequencies
+word_count = count_word_frequencies(essay_words)
+
+# Print word frequencies
+print_word_frequencies(word_count)
