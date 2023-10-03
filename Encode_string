@@ -25,4 +25,8 @@ print("Encoded Result:", encoded_result)
 
 
 OUTPUT:
+Enter a string to encode: I am Rajesh 
+Enter the encode key (a number): 3
+Encoded Result: L dp kvhmdU
+
 
