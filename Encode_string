@@ -1,0 +1,28 @@
+def encode_string(input_string, encode_key):
+    words = input_string.split()
+    encoded_words = []
+
+    for i, word in enumerate(words):
+        if i % 2 == 0:  # Even position
+            reversed_word = word[::-1]
+            encoded_word = ''.join([chr(ord(char) + encode_key) for char in reversed_word])
+        else:  # Odd position
+            encoded_word = ''.join([chr(ord(char) + encode_key) for char in word])
+
+        encoded_words.append(encoded_word)
+
+    encoded_string = ' '.join(encoded_words)
+    return encoded_string
+
+# Get user input
+user_input = input("Enter a string to encode: ")
+encode_key = int(input("Enter the encode key (a number): "))
+
+# Encode the user input
+encoded_result = encode_string(user_input, encode_key)
+print("Encoded Result:", encoded_result)
+
+
+
+OUTPUT:
+
